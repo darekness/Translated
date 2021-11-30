@@ -1,0 +1,74 @@
+.container_cards{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: max(4vmin, 40px) max(2vmin, 20px);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.history_row{
+  text-transform: capitalize;
+}
+
+.container_history_row{
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  padding: max(1vmin, 10px);
+  margin-bottom: max(1vmin, 10px);
+  text-align: left;
+}
+
+.controllers_risultati{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.controller{
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+.controller:hover{
+  cursor: pointer;
+}
+
+.button_elimina{
+  font-size: 0.8rem;
+  background-color: red;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.button_elimina:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.btn_container_search{
+  margin: max(2vmin, 20px);
+}
+
+.form_dati{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: max(2vmin, 20px);
+}
+
+.submit_button{
+  border: none;
+}
+
+.submit_button:hover{
+  cursor: pointer;
+ 
+}

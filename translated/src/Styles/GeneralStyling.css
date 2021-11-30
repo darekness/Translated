@@ -1,0 +1,80 @@
+
+.general_card{
+  background-color: white;
+  padding: clamp(20px, 4vmin, 40px);
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.title{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.input_group{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form_input{
+  border: none;
+  border-bottom: 1px solid gray;
+  
+}
+
+.form_input_container{
+  width: 100%;
+  margin-top: max(1vmin, 10px);
+}
+
+.btn_container{
+  
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.general_btn{
+  width: fit-content;
+  padding: max(0.5vmin, 5px) max(1vmin, 10px);
+  border-radius: 10px;
+}
+
+.general_btn:hover{
+  cursor: pointer;
+}
+
+.green_btn{
+  background-color: gray;
+  color: white;
+}
+
+.green_btn:hover{
+  background-color: green;
+  color: white;
+}
+
+.red_btn{
+  background-color: gray;
+  color: white;
+}
+
+.red_btn:hover{
+  background-color: red;
+  color: white;
+}
+
+.container_box_errore{
+  background-color: #ffebec;
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: max(1vmin, 10px);
+  margin: 10px 0;
+}
+
+.msg_errore_login{
+  color: red;
+}

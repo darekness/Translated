@@ -1,0 +1,43 @@
+.navbar_container{
+  background-color: white;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  height: clamp(55px, 5vmin, 100px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.logo_navbar{
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.preview_results{
+  position: absolute;
+  background-color: white;
+  width: 200px;
+}
+
+.input_search{
+  min-width: 200px;
+}
+
+.name_preview{
+  padding: max(0.5vmin, 5px) max(1vmin, 10px);
+  border: 1px solid gray;
+}
+
+.card_search{
+  width: 100%;
+  margin-bottom: max(2vmin, 20px);
+}
+
+.user_navbar{
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}

@@ -1,0 +1,18 @@
+.container_login{
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: max(8vmin, 80px) max(2vmin, 20px);
+}
+
+
+.card_login{
+  text-align: center;
+}
+
+
+.btn_container_login{
+  margin-top: max(2vmin, 20px);
+}
+
