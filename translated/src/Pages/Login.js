@@ -7,8 +7,8 @@ export default class Login extends Component {
     super(props);
 
     this.state = {
-      email: "test@translated.com",
-      pass: "secret"
+      email: "",
+      pass: ""
     }
     this.onChange = this.onChange.bind(this);
     this.submitLogin = this.submitLogin.bind(this);
