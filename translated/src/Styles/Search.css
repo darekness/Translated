@@ -11,8 +11,7 @@
 }
 
 .container_history_row{
-  border: 1px solid gainsboro;
-  border-radius: 10px;
+  border-bottom: 1px solid gainsboro;
   padding: max(1vmin, 10px);
   margin-bottom: max(1vmin, 10px);
   text-align: left;
@@ -71,4 +70,20 @@
 .submit_button:hover{
   cursor: pointer;
  
+}
+
+.container_risultato{
+  text-align: left;
+  text-transform: capitalize;
+  margin-top: max(2vmin, 20px);
+}
+
+
+.input_search{
+  
+}
+
+.card_search{
+  width: 100%;
+  margin-bottom: max(2vmin, 20px);
 }

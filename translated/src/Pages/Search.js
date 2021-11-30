@@ -15,12 +15,14 @@ export default class Search extends Component {
       history:{},
       interval_results: 0,
       page_risultati: 1,
-      error_active: false
+      error_active: false,
+      result: {}
     }
     this.onChange = this.onChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.cambiaPagina = this.cambiaPagina.bind(this);
     this.eliminaHistory = this.eliminaHistory.bind(this);
+    this.sendRequest = this.sendRequest.bind(this);
   }
 
   componentDidMount(){
@@ -67,9 +69,10 @@ export default class Search extends Component {
             let history_results = this.state.history && this.state.history[this.state.email] ? this.state.history[this.state.email] : [];
             let data = result[0].address;
             data["data_ricerca"] = moment().format('DD/MM/YYYY HH:mm');
-            data["keyword_ricerca"] = this.state.ricerca;
+            //data["keyword_ricerca"] = this.state.ricerca;
             history_results.unshift(data);
             this.setState({
+              result: result[0],
               history: {
                 ...this.state.history,
                 [this.state.email]:[...history_results]
@@ -98,7 +101,7 @@ export default class Search extends Component {
     if(valore !== 0){
       this.setState({
         page_risultati: this.state.page_risultati + (1 * valore),
-        interval_results: this.state.interval_results + (4 * valore)
+        interval_results: this.state.interval_results + (5 * valore)
       })
     }
     
@@ -149,9 +152,18 @@ export default class Search extends Component {
                   placeholder="Ricerca"
                   autocomplete="off"
                   />
-                  <input type="submit" className="general_btn"/>
+                  <div type="submit" onClick={this.sendRequest} className="general_btn blue_btn">Cerca</div>
                 </div>
-              </form>   
+              </form> 
+              {this.state.result.address ? 
+              <div className="container_risultato">
+                {Object.keys(this.state.result.address).map(elem =>{
+                  let formatted_key = elem.split("_").join(" ");
+                  return(
+                    <div className="row_risultato">{formatted_key}: <b>{this.state.result.address[elem]}</b></div>
+                  )
+                })}
+              </div>  : ""}
             </div> 
 
             <div className="general_card card_search">
@@ -174,20 +186,23 @@ export default class Search extends Component {
                       )
                     }
                   })
-                : "" }
+                : "Nessun elemento presente" }
               </div>
 
+              {this.state.history[this.state.email] ? 
+              <>
               <div className="btn_container btn_container_search">
                 <div className="general_btn red_btn" onClick={this.eliminaHistory}>Elimina la cronologia</div>
-              </div>
+              </div> 
 
               <div className="controllers_risultati">
                 <div className="controller"onClick={()=>{this.cambiaPagina("indietro")}}>Indietro</div>
                 <div>Pagina {this.state.page_risultati} di {Math.ceil(this.state.history[this.state.email] ? this.state.history[this.state.email].length / 5 : 1)}</div>                  
                 <div className="controller" onClick={()=>{this.cambiaPagina("avanti")}}>Avanti</div>    
               </div>
+              </> : ""}
             </div>
-
+            
           </div>
         </>
         }      

@@ -12,6 +12,7 @@ export default class Login extends Component {
     }
     this.onChange = this.onChange.bind(this);
     this.submitLogin = this.submitLogin.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
@@ -26,6 +27,11 @@ export default class Login extends Component {
       error_active: false,
       [e.target.name]: e.target.value
     });
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.submitLogin();
   }
 
   submitLogin(){
@@ -63,7 +69,7 @@ export default class Login extends Component {
           </div> 
 
           : ""}
-          <div className="input_group">
+          <form onSubmit={this.handleSubmit}  className="input_group">
             <div className="form_input_container">
               <input className="form_input" 
               type="email"
@@ -81,11 +87,11 @@ export default class Login extends Component {
               value={this.state.pass}
               placeholder="Password"
               />
-            </div>  
-          </div>  
-          <div className="btn_container btn_container_login">
-            <div className="general_btn green_btn" onClick={this.submitLogin}>Accedi</div>
-          </div>
+            </div> 
+            <div className="btn_container btn_container_login">
+              <button className="general_btn green_btn" type="submit" onClick={this.submitLogin}>Accedi</button>
+            </div> 
+          </form>  
         </div>
       </div>
     )

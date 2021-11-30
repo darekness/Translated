@@ -14,5 +14,6 @@
 
 .btn_container_login{
   margin-top: max(2vmin, 20px);
+  width: 100%;
 }
 

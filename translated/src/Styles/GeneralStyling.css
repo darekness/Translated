@@ -1,4 +1,9 @@
 
+button {
+  border: none;
+  margin: 0;
+}
+
 .general_card{
   background-color: white;
   padding: clamp(20px, 4vmin, 40px);
@@ -11,6 +16,8 @@
 .title{
   font-weight: bold;
   text-transform: uppercase;
+  margin-bottom: max(1vmin, 10px);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 
 .input_group{
@@ -21,12 +28,16 @@
 .form_input{
   border: none;
   border-bottom: 1px solid gray;
-  
+  padding: max(1vmin, 10px);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
 .form_input_container{
   width: 100%;
   margin-top: max(1vmin, 10px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn_container{
@@ -39,16 +50,29 @@
 
 .general_btn{
   width: fit-content;
-  padding: max(0.5vmin, 5px) max(1vmin, 10px);
+  padding: max(1vmin, 10px) max(2vmin, 20px);
   border-radius: 10px;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.2s;
 }
 
 .general_btn:hover{
   cursor: pointer;
 }
 
+.general_btn:active{
+  transform: scale(0.9);
+}
+
 .green_btn{
-  background-color: gray;
+  background-color: darkgreen;
   color: white;
 }
 
@@ -58,7 +82,7 @@
 }
 
 .red_btn{
-  background-color: gray;
+  background-color: darkred;
   color: white;
 }
 
@@ -67,12 +91,37 @@
   color: white;
 }
 
+.blue_btn{
+  background-color: #1565c0;
+  color: white;
+}
+
+.blue_btn:hover{
+  background-color: #2a7bd8;
+  color: white;
+}
+
+
 .container_box_errore{
   background-color: #ffebec;
   border: 1px solid red;
   border-radius: 10px;
   padding: max(1vmin, 10px);
   margin: 10px 0;
+  animation: apri_box;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+  transform-origin: top;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+@keyframes apri_box {
+  from{
+    transform: scaleY(0);   
+  }
+  to{
+    transform: scaleY(1); 
+  }
 }
 
 .msg_errore_login{

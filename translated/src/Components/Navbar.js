@@ -22,7 +22,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <div className="navbar_container">
-        <div className="logo_navbar">PT</div>
+        <div className="logo_navbar">DB</div>
         <div className="user_navbar">{this.state.email}</div>
         <div className="general_btn red_btn" onClick={this.logoutSession}>Logout</div>
       </div>
